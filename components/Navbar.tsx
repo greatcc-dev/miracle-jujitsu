@@ -18,12 +18,12 @@ export default function Navbar() {
       }`}
     >
       {/* Yellow top accent stripe */}
-      <div className="h-[3px] bg-yellow-400 w-full" />
+      <div className="h-[3px] bg-sky-400 w-full" />
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo — italic sport style */}
         <a href="#" className="flex items-baseline gap-1">
-          <span className="text-yellow-400 text-xl font-black italic uppercase tracking-tight">MIRACLE</span>
+          <span className="text-sky-400 text-xl font-black italic uppercase tracking-tight">MIRACLE</span>
           <span className="text-white text-xl font-black italic uppercase tracking-tight">BJJ</span>
         </a>
 

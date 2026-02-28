@@ -14,17 +14,17 @@ export default function Hero() {
 
       {/* Diagonal yellow accent bar */}
       <div
-        className="absolute top-0 right-0 w-1/2 h-full bg-yellow-400/[0.03]"
+        className="absolute top-0 right-0 w-1/2 h-full bg-sky-400/[0.03]"
         style={{ clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0% 100%)" }}
       />
 
       {/* Left yellow vertical stripe */}
-      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-yellow-400" />
+      <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-sky-400" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 pb-20 pt-40 w-full">
         {/* Sport label */}
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-8 h-[2px] bg-yellow-400" />
+          <div className="w-8 h-[2px] bg-sky-400" />
           <span className="sport-label">블랙벨트 사범 직강 · 소수 정예</span>
         </div>
 
@@ -32,7 +32,7 @@ export default function Hero() {
         <h1 className="font-black italic uppercase leading-[0.9] tracking-tight mb-10">
           <div className="text-[clamp(56px,10vw,130px)] text-white">하루를</div>
           <div className="text-[clamp(56px,10vw,130px)] flex items-baseline gap-4 flex-wrap">
-            <span className="text-yellow-400">바꾸는</span>
+            <span className="text-sky-400">바꾸는</span>
           </div>
           <div className="text-[clamp(56px,10vw,130px)] text-white">주짓수</div>
         </h1>
@@ -63,7 +63,7 @@ export default function Hero() {
               key={i}
               className="pr-10 mr-10 border-r border-white/10 last:border-0 last:mr-0"
             >
-              <div className="text-3xl md:text-4xl font-black italic text-yellow-400 leading-none">
+              <div className="text-3xl md:text-4xl font-black italic text-sky-400 leading-none">
                 {s.num}
               </div>
               <div className="text-[10px] uppercase tracking-widest text-gray-600 font-bold mt-1">

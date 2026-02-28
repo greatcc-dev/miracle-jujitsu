@@ -12,25 +12,25 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full bg-transparent border border-white/10 focus:border-yellow-400 px-4 py-3 text-white placeholder-gray-700 outline-none transition-colors text-sm font-bold uppercase tracking-wide";
+    "w-full bg-transparent border border-white/10 focus:border-sky-400 px-4 py-3 text-white placeholder-gray-700 outline-none transition-colors text-sm font-bold uppercase tracking-wide";
 
   return (
     <section id="contact" className="bg-[#0d0d0d] overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 md:px-16 py-24">
 
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-8 h-[2px] bg-yellow-400" />
+          <div className="w-8 h-[2px] bg-sky-400" />
           <span className="sport-label">Free Trial</span>
         </div>
         <h2 className="text-5xl md:text-6xl font-black italic uppercase leading-tight text-white mb-3">
           지금 바로<br />
-          <span className="text-yellow-400">무료 체험</span>
+          <span className="text-sky-400">무료 체험</span>
         </h2>
         <p className="text-gray-500 text-sm mb-16">첫 수업은 무료입니다. 부담 없이 경험해 보세요.</p>
 
         {submitted ? (
-          <div className="border border-yellow-400/20 bg-yellow-400/[0.03] p-16 text-center">
-            <div className="text-6xl font-black italic text-yellow-400 mb-4">DONE</div>
+          <div className="border border-sky-400/20 bg-sky-400/[0.03] p-16 text-center">
+            <div className="text-6xl font-black italic text-sky-400 mb-4">DONE</div>
             <p className="text-white font-black uppercase text-sm tracking-widest mb-2">신청이 완료되었습니다</p>
             <p className="text-gray-500 text-xs">곧 연락드리겠습니다. 미라클 주짓수에서 뵙겠습니다!</p>
           </div>

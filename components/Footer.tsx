@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 md:px-16 py-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <a href="#" className="flex items-baseline gap-1">
-            <span className="text-yellow-400 text-2xl font-black italic uppercase tracking-tight">MIRACLE</span>
+            <span className="text-sky-400 text-2xl font-black italic uppercase tracking-tight">MIRACLE</span>
             <span className="text-white text-2xl font-black italic uppercase tracking-tight">BJJ</span>
           </a>
 
@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="h-[3px] bg-yellow-400 w-full" />
+      <div className="h-[3px] bg-sky-400 w-full" />
     </footer>
   );
 }

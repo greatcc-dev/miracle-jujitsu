@@ -16,12 +16,12 @@ export default function Networking() {
           {/* Left — title */}
           <div className="lg:sticky lg:top-32">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-8 h-[2px] bg-yellow-400" />
+              <div className="w-8 h-[2px] bg-sky-400" />
               <span className="sport-label">Networking</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black italic uppercase leading-tight text-white mb-6">
               운동 그 이상,<br />
-              <span className="text-yellow-400">프리미엄</span><br />
+              <span className="text-sky-400">프리미엄</span><br />
               네트워킹
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed mb-10 max-w-sm">
@@ -30,12 +30,12 @@ export default function Networking() {
             </p>
 
             {/* Quote */}
-            <div className="border-l-2 border-yellow-400 pl-6">
+            <div className="border-l-2 border-sky-400 pl-6">
               <p className="text-white text-lg font-light italic leading-relaxed">
                 &ldquo;아침 운동은 단순한 체력 관리가 아닙니다.<br />
                 <strong className="font-black not-italic">하루를 내가 원하는 대로 시작하는 선언입니다.</strong>&rdquo;
               </p>
-              <p className="text-yellow-400 text-xs font-black uppercase tracking-widest mt-4">
+              <p className="text-sky-400 text-xs font-black uppercase tracking-widest mt-4">
                 — MIRACLE BJJ 사범
               </p>
             </div>
@@ -46,13 +46,13 @@ export default function Networking() {
             {benefits.map((item, i) => (
               <div
                 key={i}
-                className="group flex gap-6 py-8 border-t border-white/5 hover:border-yellow-400/20 transition-colors duration-300"
+                className="group flex gap-6 py-8 border-t border-white/5 hover:border-sky-400/20 transition-colors duration-300"
               >
-                <span className="text-5xl font-black italic text-white/5 group-hover:text-yellow-400/15 transition-colors leading-none flex-shrink-0">
+                <span className="text-5xl font-black italic text-white/5 group-hover:text-sky-400/15 transition-colors leading-none flex-shrink-0">
                   {item.num}
                 </span>
                 <div>
-                  <h3 className="text-white font-black uppercase text-sm tracking-wide mb-2 group-hover:text-yellow-400 transition-colors">
+                  <h3 className="text-white font-black uppercase text-sm tracking-wide mb-2 group-hover:text-sky-400 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
