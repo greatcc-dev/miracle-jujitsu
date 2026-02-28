@@ -1,106 +1,103 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 const features = [
   {
-    icon: "🥋",
+    num: "01",
+    tag: "BLACK BELT",
     title: "블랙벨트 사범 직강",
-    description:
-      "주짓수 블랙벨트 사범이 직접 지도합니다. 체계적인 커리큘럼으로 초보자부터 중급자까지 빠르게 실력을 향상시킬 수 있습니다.",
-    highlight: "BLACK BELT",
+    description: "주짓수 블랙벨트 사범이 직접 지도. 체계적인 커리큘럼으로 초보자부터 중급자까지 빠르게 성장합니다.",
   },
   {
-    icon: "⏰",
+    num: "02",
+    tag: "AM 8:00",
     title: "아침 8시 클래스",
-    description:
-      "하루를 가장 생산적으로 시작하세요. 저녁에 약속이 많거나 야근이 잦아 운동 시간을 내기 어려운 분들을 위한 최적의 시간대입니다.",
-    highlight: "AM 8:00",
+    description: "저녁 약속, 야근으로 운동을 미루지 마세요. 출근 전 1시간으로 하루를 완전히 다르게 시작합니다.",
   },
   {
-    icon: "💼",
+    num: "03",
+    tag: "NETWORK",
     title: "프리미엄 네트워킹",
-    description:
-      "사업가, 전문직 종사자들이 함께하는 클래스. 땀 흘리며 단련하는 동료들과 자연스럽게 형성되는 깊은 인맥은 덤입니다.",
-    highlight: "NETWORK",
+    description: "사업가, 전문직 종사자들이 함께합니다. 땀 흘리며 단련하는 과정에서 깊고 진실된 인맥이 만들어집니다.",
   },
   {
-    icon: "💰",
-    title: "합리적인 가격",
-    description:
-      "1시간에 단 2만원. 헬스장 PT의 절반도 안 되는 가격으로 최고 수준의 주짓수 수업을 받을 수 있습니다.",
-    highlight: "₩20,000/H",
+    num: "04",
+    tag: "₩20,000/H",
+    title: "압도적 가성비",
+    description: "헬스장 PT의 1/4 가격. 1시간에 2만원으로 블랙벨트 사범의 수업을 받을 수 있는 유일한 기회입니다.",
   },
 ];
 
 export default function Features() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll(".feature-card");
-            cards.forEach((card, i) => {
-              setTimeout(() => {
-                card.classList.add("opacity-100", "translate-y-0");
-                card.classList.remove("opacity-0", "translate-y-8");
-              }, i * 100);
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="features"
-      ref={sectionRef}
-      className="py-24 px-6 bg-zinc-950"
-    >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-yellow-400 text-sm font-bold tracking-widest uppercase mb-4 block">
-            Why Miracle
-          </span>
-          <h2 className="section-title text-4xl md:text-5xl">
-            왜 <span className="text-yellow-400">미라클 주짓수</span>인가
-          </h2>
-          <p className="section-subtitle text-gray-400 text-lg max-w-xl mx-auto mt-4">
-            단순한 운동을 넘어, 삶의 질을 바꾸는 경험
+    <section id="features" className="bg-[#0d0d0d] overflow-hidden">
+
+      {/* Marquee ticker */}
+      <div className="border-y border-white/5 bg-yellow-400/5 py-3 overflow-hidden">
+        <div className="flex whitespace-nowrap marquee-track">
+          {Array(2).fill(
+            ["MIRACLE BJJ", "AM 8:00", "블랙벨트", "₩20,000", "FREE TRIAL", "NETWORKING", "아침 주짓수", "BLACK BELT"]
+          ).flat().map((item, i) => (
+            <span key={i} className="text-xs font-black uppercase tracking-[0.3em] text-yellow-400/50 mx-8">
+              {item} <span className="text-white/10 mx-4">◆</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-24">
+        {/* Section header */}
+        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
+          <div>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-8 h-[2px] bg-yellow-400" />
+              <span className="sport-label">Why Miracle</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black italic uppercase leading-tight text-white">
+              왜<br />
+              <span className="text-yellow-400">미라클인가</span>
+            </h2>
+          </div>
+          <p className="text-gray-500 max-w-xs text-sm leading-relaxed">
+            단순한 운동을 넘어,<br />삶의 방식을 바꾸는 경험
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {features.map((feature, index) => (
+        {/* Features list — horizontal rows, numbered */}
+        <div className="space-y-0">
+          {features.map((f, i) => (
             <div
-              key={index}
-              className="feature-card opacity-0 translate-y-8 transition-all duration-500 card-dark group relative overflow-hidden"
+              key={i}
+              className="group flex items-start gap-6 md:gap-12 py-8 border-t border-white/5 hover:border-yellow-400/20 transition-colors duration-300 cursor-default"
             >
-              {/* Hover glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Number */}
+              <div className="text-[clamp(40px,6vw,72px)] font-black italic text-white/5 group-hover:text-yellow-400/20 transition-colors duration-300 leading-none flex-shrink-0 w-20 md:w-32 text-right">
+                {f.num}
+              </div>
 
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-4xl">{feature.icon}</span>
-                  <span className="text-xs font-black text-yellow-400/60 tracking-widest bg-yellow-400/10 px-3 py-1 rounded-full">
-                    {feature.highlight}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  {feature.title}
+              {/* Tag */}
+              <div className="hidden md:flex w-28 flex-shrink-0 pt-2">
+                <span className="text-[10px] font-black tracking-widest text-yellow-400/50 uppercase bg-yellow-400/5 px-2 py-1 group-hover:bg-yellow-400/10 transition-colors">
+                  {f.tag}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 pt-1">
+                <h3 className="text-xl md:text-2xl font-black uppercase italic text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                  {f.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  {feature.description}
+                <p className="text-gray-500 text-sm leading-relaxed max-w-lg">
+                  {f.description}
                 </p>
+              </div>
+
+              {/* Arrow */}
+              <div className="flex-shrink-0 text-white/10 group-hover:text-yellow-400/40 transition-colors duration-300 text-2xl font-black pt-1">
+                →
               </div>
             </div>
           ))}
+          <div className="border-t border-white/5" />
         </div>
       </div>
     </section>

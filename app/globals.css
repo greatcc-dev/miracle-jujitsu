@@ -2,19 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 10, 10;
-  --background-end-rgb: 17, 17, 17;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  color: #ffffff;
+  background: #080808;
   font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
 }
 
@@ -22,38 +16,41 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-
-  .animate-delay-100 {
-    animation-delay: 0.1s;
-  }
-  .animate-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animate-delay-300 {
-    animation-delay: 0.3s;
-  }
-  .animate-delay-400 {
-    animation-delay: 0.4s;
-  }
-  .animate-delay-500 {
-    animation-delay: 0.5s;
-  }
 }
 
 @layer components {
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-white mb-4;
-  }
-  .section-subtitle {
-    @apply text-gray-400 text-lg mb-12 max-w-2xl mx-auto;
-  }
-  .gold-text {
-    @apply text-yellow-400;
-  }
+  /* Sport CTA — parallelogram shape, no rounded corners */
   .btn-primary {
-    @apply bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/30;
+    @apply inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-300 text-black font-black uppercase tracking-widest py-4 px-8 text-sm transition-all duration-200 hover:gap-5;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
   }
-  .card-dark {
-    @apply bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-yellow-400/40 transition-all duration-300;
+  .btn-outline {
+    @apply inline-flex items-center gap-3 border-2 border-white/30 hover:border-yellow-400 text-white font-black uppercase tracking-widest py-4 px-8 text-sm transition-all duration-200 hover:gap-5;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 12px 100%);
   }
+  .sport-label {
+    @apply text-yellow-400 text-xs font-black tracking-[0.3em] uppercase;
+  }
+}
+
+/* Marquee ticker */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 22s linear infinite;
+}
+
+/* Giant watermark numbers behind sections */
+.section-num {
+  font-size: clamp(100px, 18vw, 220px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.05em;
 }

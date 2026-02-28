@@ -11,115 +11,134 @@ export default function Pricing() {
   ];
 
   const compare = [
-    { label: "헬스장 PT", price: "7~10만원/회", note: "고가" },
-    { label: "일반 주짓수", price: "10~15만원/월", note: "저녁 위주" },
-    { label: "미라클 주짓수", price: "2만원/회", note: "최고 가성비", highlight: true },
+    { label: "헬스장 PT", price: "7~10만원", per: "/회", note: "고가" },
+    { label: "일반 주짓수", price: "10~15만원", per: "/월", note: "저녁 위주" },
+    { label: "미라클 주짓수", price: "2만원", per: "/회", note: "최고 가성비", highlight: true },
   ];
 
   return (
-    <section id="pricing" className="py-24 px-6 bg-zinc-950">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-yellow-400 text-sm font-bold tracking-widest uppercase mb-4 block">
-            Pricing
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            투명하고 <span className="text-yellow-400">합리적인 가격</span>
-          </h2>
-          <p className="text-gray-400 text-lg">복잡한 멤버십 없이, 딱 필요한 만큼만</p>
+    <section id="pricing" className="bg-[#080808] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-24">
+
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-8 h-[2px] bg-yellow-400" />
+          <span className="sport-label">Pricing</span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          {/* Main pricing card */}
-          <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-200 rounded-3xl blur opacity-30" />
-            <div className="relative bg-zinc-900 border border-yellow-400/40 rounded-3xl p-10">
-              <div className="flex items-end gap-2 mb-2">
-                <span className="text-6xl font-black text-white">₩20,000</span>
-              </div>
-              <p className="text-yellow-400 font-semibold text-lg mb-8">1회 수업 / 1시간</p>
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-              <div className="space-y-3 mb-10">
+          {/* Left — big price display */}
+          <div>
+            <h2 className="text-5xl md:text-6xl font-black italic uppercase leading-tight text-white mb-2">
+              투명하고<br />
+              <span className="text-yellow-400">합리적인</span><br />
+              가격
+            </h2>
+            <p className="text-gray-500 text-sm mb-12">복잡한 멤버십 없이, 딱 필요한 만큼만</p>
+
+            {/* Scoreboard-style price */}
+            <div className="border border-white/5 bg-white/[0.02] p-8 mb-6">
+              <div className="flex items-end gap-2 mb-1">
+                <span className="text-[clamp(60px,10vw,100px)] font-black italic text-yellow-400 leading-none">
+                  ₩20K
+                </span>
+              </div>
+              <p className="text-gray-500 text-xs uppercase tracking-widest font-bold mb-8">
+                1회 수업 · 1시간
+              </p>
+
+              {/* Included list */}
+              <div className="space-y-3 mb-8">
                 {included.map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-300">{item}</span>
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="w-4 h-[2px] bg-yellow-400/40 flex-shrink-0" />
+                    <span className="text-gray-400 text-sm">{item}</span>
                   </div>
                 ))}
               </div>
 
-              <a href="#contact" className="btn-primary w-full text-center block">
-                무료 체험 신청하기
+              <a href="#contact" className="btn-primary w-full justify-center">
+                무료 체험 신청 →
               </a>
-
-              <p className="text-gray-600 text-xs text-center mt-4">
-                첫 체험은 무료로 진행됩니다
+              <p className="text-gray-700 text-[10px] uppercase tracking-widest text-center mt-4">
+                첫 체험 무료
               </p>
+            </div>
+
+            {/* Mini stats */}
+            <div className="grid grid-cols-2 gap-2">
+              <div className="border border-white/5 px-5 py-4">
+                <div className="text-2xl font-black italic text-yellow-400">1H</div>
+                <div className="text-[10px] uppercase tracking-widest text-gray-600 mt-1">집중 트레이닝</div>
+              </div>
+              <div className="border border-white/5 px-5 py-4">
+                <div className="text-2xl font-black italic text-yellow-400">AM8</div>
+                <div className="text-[10px] uppercase tracking-widest text-gray-600 mt-1">출근 전 완료</div>
+              </div>
             </div>
           </div>
 
-          {/* Comparison */}
+          {/* Right — comparison */}
           <div>
-            <h3 className="text-white font-bold text-xl mb-6">타 운동과 비교</h3>
-            <div className="space-y-3">
+            <h3 className="text-white font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-3">
+              <span className="text-gray-600">——</span> 타 운동과 비교
+            </h3>
+
+            <div className="space-y-2">
               {compare.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-between p-4 rounded-xl border transition-all ${
+                  className={`flex items-center justify-between px-6 py-5 border transition-colors duration-200 ${
                     item.highlight
-                      ? "border-yellow-400/40 bg-yellow-400/5"
-                      : "border-zinc-800 bg-zinc-900/50"
+                      ? "border-yellow-400/30 bg-yellow-400/[0.04]"
+                      : "border-white/5 bg-transparent"
                   }`}
                 >
-                  <div>
-                    <span
-                      className={`font-semibold ${
-                        item.highlight ? "text-white" : "text-gray-400"
-                      }`}
-                    >
-                      {item.label}
-                    </span>
+                  <div className="flex items-center gap-3">
                     {item.highlight && (
-                      <span className="ml-2 text-xs bg-yellow-400 text-black font-bold px-2 py-0.5 rounded-full">
-                        추천
-                      </span>
+                      <div className="w-1.5 h-6 bg-yellow-400 flex-shrink-0" />
                     )}
+                    <div>
+                      <span className={`font-black uppercase text-sm tracking-wide ${
+                        item.highlight ? "text-white" : "text-gray-500"
+                      }`}>
+                        {item.label}
+                      </span>
+                      {item.highlight && (
+                        <div className="text-[10px] uppercase tracking-widest text-yellow-400/60 font-bold">
+                          {item.note}
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="text-right">
-                    <span
-                      className={`font-bold ${
-                        item.highlight ? "text-yellow-400" : "text-gray-500"
-                      }`}
-                    >
+                    <span className={`font-black italic text-xl ${
+                      item.highlight ? "text-yellow-400" : "text-gray-600"
+                    }`}>
                       {item.price}
                     </span>
-                    <span
-                      className={`ml-2 text-xs ${
-                        item.highlight ? "text-yellow-400/70" : "text-gray-600"
-                      }`}
-                    >
-                      {item.note}
+                    <span className={`text-xs ${item.highlight ? "text-yellow-400/60" : "text-gray-700"}`}>
+                      {item.per}
                     </span>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 text-center">
-                <div className="text-3xl font-black text-yellow-400 mb-1">1H</div>
-                <div className="text-gray-500 text-sm">딱 1시간, 효율적</div>
+            {/* Callout */}
+            <div className="mt-12 pt-10 border-t border-white/5">
+              <div className="text-[clamp(60px,8vw,90px)] font-black italic leading-none text-white/5 mb-0">
+                75%
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 text-center">
-                <div className="text-3xl font-black text-yellow-400 mb-1">AM8</div>
-                <div className="text-gray-500 text-sm">출근 전 완료</div>
-              </div>
+              <p className="text-white font-black uppercase text-sm tracking-wide -mt-2">
+                헬스장 PT 대비 절감
+              </p>
+              <p className="text-gray-600 text-xs mt-2 leading-relaxed">
+                같은 시간, 같은 노력으로 더 많은 것을 얻으세요.
+              </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>

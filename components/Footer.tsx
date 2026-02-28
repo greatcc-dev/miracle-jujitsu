@@ -1,36 +1,40 @@
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-zinc-900 py-12 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-yellow-400 text-xl font-black">미라클</span>
-              <span className="text-white text-xl font-black">주짓수</span>
-            </div>
-            <p className="text-gray-600 text-sm">
-              아침 8시, 하루를 바꾸는 주짓수 클래스
-            </p>
-          </div>
+    <footer className="bg-[#080808] border-t border-white/5">
 
-          <div className="grid grid-cols-2 gap-x-16 gap-y-2 text-sm">
-            <a href="#features" className="text-gray-600 hover:text-gray-300 transition-colors">특징</a>
-            <a href="#schedule" className="text-gray-600 hover:text-gray-300 transition-colors">일정</a>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-300 transition-colors">가격</a>
-            <a href="#contact" className="text-gray-600 hover:text-gray-300 transition-colors">신청</a>
+      {/* Yellow bottom stripe */}
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <a href="#" className="flex items-baseline gap-1">
+            <span className="text-yellow-400 text-2xl font-black italic uppercase tracking-tight">MIRACLE</span>
+            <span className="text-white text-2xl font-black italic uppercase tracking-tight">BJJ</span>
+          </a>
+
+          <div className="flex flex-wrap gap-x-10 gap-y-2">
+            {["특징", "일정", "가격", "네트워킹", "체험 신청"].map((item, i) => (
+              <a
+                key={i}
+                href={`#${["features", "schedule", "pricing", "join", "contact"][i]}`}
+                className="text-[10px] font-black uppercase tracking-widest text-gray-600 hover:text-white transition-colors"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-zinc-900 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-700 text-xs">
-            © 2025 미라클 주짓수. All rights reserved.
+        <div className="border-t border-white/5 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-700 text-[10px] uppercase tracking-widest">
+            © 2025 MIRACLE BJJ. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex items-center gap-2 text-xs text-gray-700">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+          <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-700 font-bold">
+            <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
             현재 체험 신청 가능
           </div>
         </div>
       </div>
+
+      <div className="h-[3px] bg-yellow-400 w-full" />
     </footer>
   );
 }
