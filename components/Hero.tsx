@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Giant background time — decorative */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] text-[28vw] font-black italic text-transparent pointer-events-none select-none leading-none"
-        style={{ WebkitTextStroke: "1px rgba(255,255,255,0.04)" }}
+        style={{ WebkitTextStroke: "1px rgba(255,255,255,0.12)", opacity: 0.6 }}
       >
         08:00
       </div>
